@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
+const bot_token = require('./bot_tok')
+
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
 
@@ -95,6 +97,6 @@ function multiplyCommand(arguments, recievedMessage) {
 //bot token comes from 
 // https://discordapp.com/developers/applications/
 // application -> bot -> token
-bot_secret_token = "hide"
+bot_secret_token = bot_token.secBotTok();
 
 client.login(bot_secret_token)
